@@ -1,12 +1,74 @@
-export default function TransitionScreen() {
-    return (
-      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-green-500 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-green-500 appear-animation-left"></div>
-        <h1 className="text-white text-4xl animate-bounce">
-          SWITCHSTORE
-        </h1>
-        {/* <div className="absolute bottom-0 left-0 w-full h-1/2 bg-blue-500 animate-spin"></div> */}
-      </div>
-    );
+import { motion } from "framer-motion";
+
+export default function TransitionScreen({ toPage }) {
+  const variants_b1 = {
+    hidden: { y: "-100vh" },
+    visible: {
+      y: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+        repeat: 1,
+        repeatType: "reverse",
+      },
+    },
+  };
+
+  const variants_b2 = {
+    hidden: { y: "100vh" },
+    visible: {
+      y: "-100vh",
+      transition: { ease: "easeInOut", duration: 1.5, delay: 0.85 },
+    },
+  };
+
+  return (
+    <div className="flex flex-col justify-center items-center h-screen">
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full bg-black z-10"
+        variants={variants_b1}
+        initial="hidden"
+        animate="visible"
+      ></motion.div>
+      <motion.p
+        className="text-white text-9xl font-semibold pr-12 z-20 font-outline-2"
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0, scale: 1 }}
+        transition={{
+          duration: 0.1,
+          delay: 1.1,
+        }}
+      >
+        Switch
+      </motion.p>
+      <motion.p
+        className="text-green-600 text-9xl font-semibold pl-12 z-20"
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0, scale: 1 }}
+        transition={{
+          duration: 0.1,
+          delay: 1.1,
+        }}
+      >
+        Store
+      </motion.p>
+      <motion.p
+        className="text-white text-6xl font-light pr-2 z-20"
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0, scale: 1 }}
+        transition={{
+          duration: 0.1,
+          delay: 1.1,
+        }}
+      >
+        {toPage}
+      </motion.p>
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full bg-green-600 z-20"
+        variants={variants_b2}
+        initial="hidden"
+        animate="visible"
+      ></motion.div>
+    </div>
+  );
 }
-  

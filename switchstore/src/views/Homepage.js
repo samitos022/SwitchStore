@@ -9,17 +9,18 @@ export default function Homepage() {
     // Simula un ritardo di 2 secondi per la transizione
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 2200);
   }, []);
 
   return (
     <div>
       {loading ? (
-        <TransitionScreen />
+        <TransitionScreen toPage={"Home"}/>
       ) : (
         <>
           <Header />
-          <p>Homepage</p>
+          {/* <p>Homepage</p> */}
+
         </>
       )}
     </div>
