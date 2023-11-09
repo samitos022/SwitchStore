@@ -17,11 +17,11 @@ export default function Homepage() {
       {loading ? (
         <TransitionScreen toPage={"Home"}/>
       ) : (
-        <>
+        <div className="border">
           <Header />
-          {/* <p>Homepage</p> */}
+          {/* <ScrollingWords /> */}
 
-        </>
+        </div>
       )}
     </div>
   );

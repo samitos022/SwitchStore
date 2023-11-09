@@ -1,75 +1,38 @@
-import { motion } from "framer-motion";
+import NavbarButton from "../utils/Header/NavbarButton";
+import NavbarDropdownMenu from "../utils/Header/NavbarDropdownMenu";
 
 export default function Header() {
+
   return (
-    <header className="bg-white border-2 py-4">
+    <header className="bg-white border py-4 fixed w-full top-0 z-10">
       <div className="lg:flex justify-between items-center">
         <a href="/" className="flex items-center">
-          <img src="logo.jpg" alt="Switch Store" className="h-16" />
+          {/* <img src="logo.jpg" alt="Switch Store" className="h-16 animate-spin" /> */}
           <div className="ml-4 flex">
-            <p className="text-3xl lg:text-5xl text-black">Switch</p>
-            <p className="text-3xl lg:text-5xl font-semibold text-green-700">Store</p>
+            <p className="text-3xl lg:text-5xl font-light text-black">Switch</p>
+            <p className="text-3xl lg:text-5xl font-semibold text-green-600">
+              Store
+            </p>
           </div>
         </a>
 
         <nav className="mt-4 lg:mt-0 pr-8">
-          <ul className="flex flex-wrap lg:flex-nowrap justify-between gap-4">
-            <motion.li whileHover={{ scale: 1.2 }}>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Riparazioni
-              </a>
-            </motion.li>
-            <li>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Centro Assistenza Apple IRP
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Accessori e ricambi
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Franchising
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Accademy
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="text-black border-2 p-2 rounded-full"
-              >
-                Vendita ricondizionati
-              </a>
-            </li>
+          <ul className="flex flex-wrap lg:flex-nowrap justify-between gap-12">
+            
+            <NavbarDropdownMenu testo={"Riparazione"} />
+
+            <NavbarButton testo={"Centro Assistenza Apple IRP"}/>
+
+            <NavbarButton testo={"Ricambi e Accessori"}/>
+
+            <NavbarButton testo={"Franchising"}/>
+
+            <NavbarButton testo={"Accademia"}/>
+
+            <NavbarButton testo={"Blog"}/>
+
+            <NavbarButton testo={"Vendita ricondizionati"}/>
+            
           </ul>
         </nav>
       </div>
