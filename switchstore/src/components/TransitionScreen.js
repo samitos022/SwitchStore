@@ -31,7 +31,7 @@ export default function TransitionScreen({ toPage }) {
         animate="visible"
       ></motion.div>
       <motion.p
-        className="text-white text-9xl font-semibold pr-12 z-20 font-outline-2"
+        className="text-green-600 text-9xl font-semibold pr-12 z-20"
         initial={{ opacity: 1, scale: 1 }}
         animate={{ opacity: 0, scale: 1 }}
         transition={{
@@ -42,7 +42,7 @@ export default function TransitionScreen({ toPage }) {
         Switch
       </motion.p>
       <motion.p
-        className="text-green-600 text-9xl font-semibold pl-12 z-20"
+        className="text-white text-9xl font-semibold pl-12 z-20"
         initial={{ opacity: 1, scale: 1 }}
         animate={{ opacity: 0, scale: 1 }}
         transition={{

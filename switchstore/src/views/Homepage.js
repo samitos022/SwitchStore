@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import TransitionScreen from "../components/TransitionScreen";
+import FirstPart from "../utils/Homepage/Parts/FirstPart";
+import SecondPart from "../utils/Homepage/Parts/SecondPart";
 
 export default function Homepage() {
   const [loading, setLoading] = useState(true);
@@ -12,17 +14,21 @@ export default function Homepage() {
     }, 2200);
   }, []);
 
-  return (
-    <div>
-      {loading ? (
-        <TransitionScreen toPage={"Home"}/>
-      ) : (
-        <div className="border">
-          <Header />
-          {/* <ScrollingWords /> */}
 
-        </div>
+  return (
+    <>
+      {loading ? (
+        <TransitionScreen toPage={" "} />
+        // <p>Ciao</p>
+      ) : (
+        <>
+          <Header />
+          <main className="relative full-screen">
+            <FirstPart />
+            <SecondPart />
+          </main>
+        </>
       )}
-    </div>
+    </>
   );
 }
