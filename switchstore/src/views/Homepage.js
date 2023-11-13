@@ -23,7 +23,7 @@ export default function Homepage() {
       ) : (
         <>
           <Header />
-          <main className="relative full-screen">
+          <main className="">
             <FirstPart />
             <SecondPart />
           </main>

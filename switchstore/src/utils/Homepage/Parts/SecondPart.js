@@ -1,8 +1,10 @@
-import { useScroll, useMotionValue, motion, useMotionValueEvent  } from "framer-motion";
-import { useEffect } from "react";
+import InfiniteHorizontalScroll from "../otherUtils/InfiniteHorizontalScroll";
 
 export default function SecondPart() {
-    const { scrollYProgress } = useScroll()
     
-    return <motion.div style={{ scaleX: scrollYProgress }} />
+    return (
+        <div className="">
+            <InfiniteHorizontalScroll/>
+        </div>
+    )
 }
